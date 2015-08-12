@@ -4,7 +4,7 @@
  * @author Raido Pahtma
  * @license MIT
  */
-#include "am_id_shared.h"
+#include "ConfCommunication.h"
 #ifndef CONF_COMMUNICATION_UNSECURE
 #include "CertUpdateDefaultCert.h"
 #ifndef DSEC_CONFCOMMUNICATION_CA

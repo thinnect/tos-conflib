@@ -4,7 +4,13 @@
 */
 #ifndef CONFCOMMUNICATION_H_
 #define CONFCOMMUNICATION_H_
-#include "am_id_shared.h"
+
+	#ifndef AMID_CONF
+ 	#define AMID_CONF 0x90
+ 	#else
+ 	#warning "AMID_CONF defined externally!"
+ 	#endif // AMID_CONF
+
 
 	/**
     *	List request.

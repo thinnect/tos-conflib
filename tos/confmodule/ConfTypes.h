@@ -10,21 +10,21 @@ enum ConfTypes {
 
 /*  Data types        */
 
-	CPT_EMPTY      = 0x00,
-	CPT_STRING     = 0x01,
-	CPT_HEX        = 0x02,
-	CPT_XML        = 0x03,
+	CPT_RAW        = 0x00,
+	CPT_UINT8_T    = 0x01,
+	CPT_UINT16_T   = 0x02,
+	CPT_UINT32_T   = 0x04,
 
-	CPT_UINT8_T    = 0x11,
-	CPT_UINT16_T   = 0x12,
-	CPT_UINT32_T   = 0x13,
+//	CPT_HEX        = 0x02,
+//	CPT_XML        = 0x03,
 
-	CPT_INT8_T     = 0x21,
-	CPT_INT16_T    = 0x22,
-	CPT_INT32_T    = 0x23,
+	CPT_STRING     = 0x80,
+	CPT_INT8_T     = 0x81,
+	CPT_INT16_T    = 0x82,
+	CPT_INT32_T    = 0x84,
 
-	CPT_FLOAT_T    = 0x31,
-	CPT_DOUBLE_T   = 0x32,
+//	CPT_FLOAT_T    = 0x31,
+//	CPT_DOUBLE_T   = 0x32,
 
 /*  Storage types           */
 
