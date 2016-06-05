@@ -28,7 +28,7 @@ implementation {
 		uint16_t i;
 		debug1("count %u", conf_count);
 		for(i=0;i<conf_count;i++) {
-			call ConfParameter.init[i](NULL, 0);
+			call ConfParameter.set[i](NULL, 0, TRUE);
 			if(call ConfParameter.match[i](&muuid)) {
 				debugb1("match %u", &muuid, UUID128_LENGTH, i);
 			}
@@ -53,8 +53,6 @@ implementation {
 		signal Boot.booted();
 	}
 
-	default command error_t ConfParameter.init[uint16_t id](uint8_t buffer[], uint16_t length) { return ELAST; }
-
 	default command error_t ConfParameter.properties[uint16_t id](conf_info_struct_t* pinfo) { return ELAST; }
 
 	default command error_t ConfParameter.uuid[uint16_t id](uuid128_t* uuid) { return ELAST; }
@@ -63,7 +61,7 @@ implementation {
 
 	default command uint16_t ConfParameter.get[uint16_t id](uint8_t buffer[], uint16_t length) { return 0; }
 
-	default command error_t ConfParameter.set[uint16_t id](uint8_t buffer[], uint16_t length) { return ELAST; }
+	default command error_t ConfParameter.set[uint16_t id](uint8_t buffer[], uint16_t length, bool init) { return ELAST; }
 
 	default command uint16_t ConfParameterMeta.get[uint16_t id](uint8_t buffer[], uint16_t length) { return 0; }
 

@@ -8,8 +8,6 @@
 #include "ConfLib.h"
 interface ConfParameter {
 
-	command error_t init(uint8_t buffer[], uint16_t length);
-
 	command error_t properties(conf_info_struct_t* pinfo);
 
 	command error_t uuid(uuid128_t* u);
@@ -18,6 +16,6 @@ interface ConfParameter {
 
 	command uint16_t get(uint8_t buffer[], uint16_t length);
 
-	command error_t set(uint8_t buffer[], uint16_t length);
+	command error_t set(uint8_t buffer[], uint16_t length, bool init);
 
 }

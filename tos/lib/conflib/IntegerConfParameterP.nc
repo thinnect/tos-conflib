@@ -65,26 +65,15 @@ implementation {
 		return 0;
 	}
 
-	command error_t ConfParameter.set(uint8_t buffer[], uint16_t length) {
+	command error_t ConfParameter.set(uint8_t buffer[], uint16_t length, bool init) {
 		if(length == sizeof(value_type)) {
 			value_type v;
 			reverse_byte_order((uint8_t*)&v, buffer, sizeof(value_type));
 			if(call ConfParameterCheck.suitable(v)) {
 				conf_value = v;
-				signal Changed.changed(conf_value);
-				return SUCCESS;
-			}
-			return EINVAL;
-		}
-		return ESIZE;
-	}
-
-	command error_t ConfParameter.init(uint8_t buffer[], uint16_t length) {
-		if(length == sizeof(value_type)) {
-			value_type v;
-			reverse_byte_order((uint8_t*)&v, buffer, sizeof(value_type));
-			if(call ConfParameterCheck.suitable(v)) {
-				conf_value = v;
+				if(!init) {
+					signal Changed.changed(conf_value);
+				}
 				return SUCCESS;
 			}
 			return EINVAL;
