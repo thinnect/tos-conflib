@@ -8,7 +8,7 @@
 #include "ConfLib.h"
 interface ConfParameter {
 
-	command error_t properties(conf_info_struct_t* pinfo);
+	command error_t properties(conflib_info_t* pinfo);
 
 	command error_t uuid(uuid128_t* u);
 

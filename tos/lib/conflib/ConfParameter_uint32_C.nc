@@ -36,9 +36,9 @@ implementation {
 	GetSet = Parameter.GetSet;
 	Changed = Parameter.Changed;
 
-	components ConfSetupC;
-	ConfSetupC.ConfParameter[CONF_PARAMETER_ID] -> Parameter.ConfParameter;
-	ConfSetupC.ConfParameterMeta[CONF_PARAMETER_ID] -> Meta.ConfParameterMeta;
+	components ConfLibSetupC;
+	ConfLibSetupC.ConfParameter[CONF_PARAMETER_ID] -> Parameter.ConfParameter;
+	ConfLibSetupC.ConfParameterMeta[CONF_PARAMETER_ID] -> Meta.ConfParameterMeta;
 
 	components MainC;
 	MainC.SoftwareInit -> Parameter;

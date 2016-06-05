@@ -34,7 +34,8 @@ implementation {
 	#include "log.h"
 
 	PROGMEM const uint8_t conf_uuid[UUID128_LENGTH] = { u0, u1, u2, u3, u4, u5, u6, u7, u8, u9, ua, ub, uc, ud, ue, uf };
-	PROGMEM const conf_info_struct_t conf_info = {conf_storage, conf_policy, conf_type, sizeof(value_type)};
+
+	PROGMEM const conflib_info_t conf_info= {conf_type, conf_storage, conf_policy, sizeof(value_type), sizeof(value_type), sizeof(value_type)};
 
 	value_type conf_value;
 
@@ -43,8 +44,8 @@ implementation {
 		return SUCCESS;
 	}
 
-	command error_t ConfParameter.properties(conf_info_struct_t* pinfo) {
-		memcpy_P(pinfo, &conf_info, sizeof(conf_info_struct_t));
+	command error_t ConfParameter.properties(conflib_info_t* pinfo) {
+		memcpy_P(pinfo, &conf_info, sizeof(conflib_info_t));
 		return SUCCESS;
 	}
 

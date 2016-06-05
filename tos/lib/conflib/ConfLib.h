@@ -7,12 +7,25 @@
 #ifndef CONFLIB_H_
 #define CONFLIB_H_
 
-typedef struct conf_info_struct_t {
-	uint8_t storage;
-	uint8_t policy;
-	uint8_t type;
-	uint8_t size;
-} conf_info_struct_t;
+typedef struct conflib_info {
+	uint8_t  type;
+	uint8_t  storage;
+	uint8_t  policy;
+	uint16_t min_length;
+	uint16_t max_length;
+	uint16_t length;
+} conflib_info_t;
+
+typedef struct conflib_details {
+	uint8_t      type;
+	uint8_t      storage;
+	uint8_t      policy;
+	uint16_t     min_length;
+	uint16_t     max_length;
+	uint16_t     length;
+	uint16_t     hash;
+	ieee_eui64_t watcher;
+} conflib_details_t;
 
 enum ConfParamTypes {
 	CONF_PARAM_TYPE_RAW        = 0, // just bits/bytes
