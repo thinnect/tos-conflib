@@ -10,10 +10,6 @@
 #include "uuid128.h"
 #include "IeeeEui64.h"
 
-typedef nx_struct nx_ieee_eui64 {
-  nx_uint8_t data[IEEE_EUI64_LENGTH];
-} nx_ieee_eui64_t;
-
 #define AMID_CONFLIB 0xCF
 
 enum ConfLibMessageTypes {
